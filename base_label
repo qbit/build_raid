@@ -1,0 +1,20 @@
+# /dev/rsd2c:
+type: SCSI
+disk: SCSI disk
+label: WDC WD20EZRX-19D
+duid: 816d48e4c05f577a
+flags:
+bytes/sector: 512
+sectors/track: 63
+tracks/cylinder: 255
+sectors/cylinder: 16065
+cylinders: 243201
+total sectors: 3907029168
+boundstart: 0
+boundend: 3907029168
+drivedata: 0 
+
+16 partitions:
+#                size           offset  fstype [fsize bsize  cpg]
+  a:       3907029168                0    RAID                   
+  c:       3907029168                0  unused                   

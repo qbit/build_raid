@@ -1,0 +1,21 @@
+#!/bin/ksh
+
+# blow away the disk info
+bioctl -d sd8
+bioctl -d sd6
+bioctl -d sd7
+
+for i in 2 3 4 5; do
+	dd if=/dev/zero of=/dev/sd${i}c bs=512 count=3000
+	dd if=/dev/zero of=/dev/sd${i}c bs=512 seek=$((3907029168-512))
+
+	disklabel -R sd${i} base_label
+done
+
+bioctl -c 1 -l /dev/sd2a,/dev/sd3a softraid0
+bioctl -c 1 -l /dev/sd4a,/dev/sd5a softraid0
+
+disklabel -R sd6 raid_label
+disklabel -R sd7 raid_label
+
+bioctl -c 0 -l /dev/sd6a,/dev/sd7a softraid0

@@ -1,0 +1,20 @@
+# /dev/rsd6c:
+type: SCSI
+disk: SCSI disk
+label: SR RAID 1
+duid: 07230d07298b2709
+flags:
+bytes/sector: 512
+sectors/track: 63
+tracks/cylinder: 255
+sectors/cylinder: 16065
+cylinders: 243201
+total sectors: 3907028640
+boundstart: 0
+boundend: 3907028640
+drivedata: 0 
+
+16 partitions:
+#                size           offset  fstype [fsize bsize  cpg]
+  a:       3907028640                0    RAID                   
+  c:       3907028640                0  unused                   
